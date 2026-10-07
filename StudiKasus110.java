@@ -12,6 +12,30 @@ public class StudiKasus110 {
         cupCount = sc.nextInt();
         System.out.print("Enter the amount paid: ");
         amountPaid = sc.nextInt();
+        totalPrice = cupCount * pricePerCup;
+        discount = 0;
+
+        if (totalPrice >= 100000) {
+            discount = totalPrice * 10 / 100;
+        }
+
+        totalPayment = totalPrice - discount;
+
+        System.out.println("Total price   : Rp" + totalPrice);
+        System.out.println("Discount      : Rp" + discount);
+        System.out.println("Total payment : Rp" + totalPayment);
+
+        if (amountPaid >= totalPayment) {
+            change = amountPaid - totalPayment;
+            System.out.println("Change        : Rp" + change);
+        } else {
+            shortage = totalPayment - amountPaid;
+            System.out.println("Insufficient money, short by Rp" + shortage);
+        }
+
+        sc.close();
     }
 }
+
+    
         
